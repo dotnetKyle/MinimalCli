@@ -51,8 +51,12 @@ public class IntermediateCaGenerator
         }
 
         var rootCABytes = await File.ReadAllBytesAsync(issuerFilePath);
+#if NET10_0_OR_GREATER
+        var rootCA = X509CertificateLoader.LoadCertificate(rootCABytes);
+#else
         var rootCA = new X509Certificate2(rootCABytes);
-        if(!rootCA.HasPrivateKey)
+#endif
+        if (!rootCA.HasPrivateKey)
         {
             Console.WriteLine($"The issuer does not have a private key for issuing certificates.");
             return;

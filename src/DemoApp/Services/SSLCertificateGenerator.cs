@@ -76,7 +76,11 @@ public class SSLCertificateGenerator
         }
 
         var issuerCABytes = await File.ReadAllBytesAsync(issuerFilePath2);
+#if NET10_0_OR_GREATER
+        var issuerCA = X509CertificateLoader.LoadCertificate(issuerCABytes);
+#else
         var issuerCA = new X509Certificate2(issuerCABytes);
+#endif
         if (!issuerCA.HasPrivateKey)
         {
             Console.WriteLine($"The issuer does not have a private key for issuing certificates.");

@@ -12,7 +12,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/dotnetKyle/MinimalCli</RepositoryUrl>
 		<PackageTags>Command; Line; System.CommandLine; Minimal; Source Generator; Minimal CLI; CLI</PackageTags>
-		<PackageReleaseNotes>Added a source generator to quickly rig up commands with minimal effort.</PackageReleaseNotes>
+		<PackageReleaseNotes>Update System.CommandLine to latest</PackageReleaseNotes>
 		<DebugType>embedded</DebugType>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 	</PropertyGroup>
@@ -38,6 +38,6 @@
 	<ItemGroup>
 		<!-- Runtime library nuget dependencies -->
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
-		<PackageReference Include="System.CommandLine" Version="2.0.12" />
+		<PackageReference Include="System.CommandLine" Version="2.0.13" />
 	</ItemGroup>
 </Project>
